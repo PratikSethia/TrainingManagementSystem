@@ -1,0 +1,10 @@
+@CHARSET "ISO-8859-1";
+
+#headerTitleDiv{
+	size:auto;
+	float: left;
+}
+#headerMenuDiv{
+	padding-top: 20px;
+	font-size: 20px;
+}

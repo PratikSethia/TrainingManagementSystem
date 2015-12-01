@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+>
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+<script src="jquery.js" type="text/javascript"></script>
+<script type="text/javascript" src="jquery-ui.js"></script>
+<script type="text/javascript" src="javaScript/menu.js"></script>
+<style  > 
+
+.list{
+ display: none; 
+ background-color: grey; 
+ width: 100px;
+}
+
+</style>
+</h:head>
+<h:body>
+	<div id="topMenu">
+		<div id="menuList">
+			<table>
+				<tr>
+					<ui:repeat var="menu" value="#{userBean.lists}">
+				
+					<td style="width: 70px;"  id="#{menu.menuListId}" class="menu"><h:commandButton type="button" value="#{menu.role}"/> </td>
+					</ui:repeat>
+				
+				</tr>	
+			</table>
+		</div>
+		<div id="M1MenuList" >
+			<table id="table" border="2">
+				
+			</table>
+		</div>
+		<div id="M2MenuList"  class="list" style="margin-left: 70px;">
+			<table>
+				<tr>
+					<td>M2-Menu1</td>
+				</tr>
+				<tr>
+					<td>M2-Menu2</td>
+				</tr>
+				<tr>
+					<td>M2-Menu3</td>
+				</tr>
+			</table>
+		</div>
+		<div id="M3MenuList"  class="list" style="margin-left: 140px;">
+			<table>
+				<tr>
+					<td>M3-Menu1</td>
+				</tr>
+				<tr>
+					<td>M3-Menu2</td>
+				</tr>
+				<tr>
+					<td>M3-Menu3</td>
+				</tr>
+			</table>
+		</div>
+		<div id="M4MenuList"  class="list" style="margin-left: 210px;">
+			<table>
+				<tr>
+					<td>M4-Menu1</td>
+				</tr>
+				<tr>
+					<td>M4-Menu2</td>
+				</tr>
+				<tr>
+					<td>M4-Menu3</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+
+</h:body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/templatesDashboard/template.xhtml">
+	
+	<ui:define name="content">
+	   	<div id="listDashboardDiv">
+
+		
+
+					<div id="listMiddle-dashboardDiv">
+						<div id="middle-dashboardLeft" class="listMiddle-dashboardSections">
+							<div id="listMiddle-dashboardLeft-TitleDiv">
+								<div style="float: left; padding-left: 1%;"><h2>List OF Courses</h2></div>
+							</div>
+							<div id="listMiddle-dashboardLeft-ContentDiv" style="padding-top: 73px;">
+								<h:form prependId="false">
+								<table style="margin-left: 135px;">
+									<tr>
+										<td>Reference Code</td>
+										<td>Course Title</td>
+										<td colspan="2" align="center">Action</td>
+									</tr>
+									<ui:repeat var="courses" value="#{courseBean.activeCourses}">
+										<tr>
+											<td>#{courses.referenceCode}</td>
+											<td>#{courses.courseTitle}</td>
+											<td><p style="padding-left: 10px; font-weight: bold;"><h:commandButton value="Details" action="#{trainerBean.allActiveCoursesDetails}" class="button">
+												<f:setPropertyActionListener target="#{trainerBean.selectedCourseId}"
+                                                        value="#{courses.course_Id}" />
+											</h:commandButton></p> </td>
+											
+											
+										</tr>
+									</ui:repeat>
+								</table>
+								</h:form>
+							
+							</div>
+
+						</div>
+						
+
+					</div>
+				</div>
+	</ui:define>
+	
+</ui:composition>
+</html>

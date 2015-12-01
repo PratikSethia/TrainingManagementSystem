@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+>
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+</h:head>
+<h:body>
+	<div id="leftBarDiv">
+		<div id="barDiv1" class="leftBarMenus">
+			<h:form>
+				<h:commandLink class="tooltips" action="composition" >
+					<img src="resources/image/1.png" alt="dashboard" height="57px" width="100%" />
+					<span>DashBoard</span>
+				</h:commandLink>
+			</h:form>
+		</div>
+		<div id="barDiv2" class="leftBarMenus">
+			<h:form>
+				<h:commandLink class="tooltips" action="#{courseBean.getAllCourses}">
+					<img src="resources/image/hat.png" alt="2 not load" height="57px" width="100%" />
+					<span>COURSES</span>
+				</h:commandLink>
+			</h:form>
+
+		</div>
+		<div id="barDiv3" class="leftBarMenus">
+			<h:form>
+				<h:commandLink class="tooltips">
+					<img src="resources/image/man.png" alt="peopleIcon" height="57px" width="100%" />
+					<span>People</span>
+				</h:commandLink>
+			</h:form>
+		</div>
+		<div id="barDiv4" class="leftBarMenus">
+			<h:form>
+				<h:commandLink class="tooltips">
+					<img src="resources/image/groupIcon.png" alt="groupIcon" height="57px" width="100%" />
+					<span>Team</span>
+				</h:commandLink>
+			</h:form>
+		</div>
+		<div id="barDiv5" class="leftBarMenus">
+			<h:form>
+				<h:commandLink class="tooltips">
+					<img src="resources/image/graph.png" alt="graph" height="57px" width="100%" />
+					<span>Reports</span>
+				</h:commandLink>
+			</h:form>
+		</div>
+		<div id="barDiv6" class="leftBarMenus">
+			<h:form>
+				<h:commandLink class="tooltips">
+					<img src="resources/image/mail.png" alt="mail" height="57px" width="100%" />
+					<span>Messages</span>
+				</h:commandLink>
+			</h:form>
+		</div>
+		<div id="barDiv7" class="leftBarMenus">
+			<h:form>
+				<h:commandLink class="tooltips">
+					<img src="resources/image/settingIcon.png" alt="settings" height="57px" width="100%" />
+					<span>Settings</span>
+				</h:commandLink>
+			</h:form>
+		</div>
+	</div>
+</h:body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+
+<ui:composition template="/templatesDashboard/template.xhtml">
+	<!-- <ui:define name="header">
+	    Add your header here or delete to use the default
+	</ui:define> -->
+	<ui:define name="content">
+		<div id="mainContainerDiv">
+
+			<div id="courseMiddleDiv">
+				<ui:include src="sideMenu.xhtml"></ui:include>
+				<div id="courseDashboardDiv">
+
+
+					<div id="courseMiddle-dashboardDiv">
+						<div id="middle-dashboardLeft"
+							class="courseMiddle-dashboardSections">
+							<div id="courseMiddle-dashboardLeft-TitleDiv">
+								<div style="float: left; padding-left: 1%;">
+									<h2>Create a New Course</h2>
+								</div>
+								<div style="color: red; margin-left: 70%; font-size: 20px; padding-top: 10px;" >
+								
+									#{param.message}
+								</div>
+
+								<div style="margin-left: 7%;">
+
+									<h:form prependId="false">
+										<table>
+											<tr>
+												<td>Course Title:</td>
+												<td><p><h:inputText size="100"
+														value="#{courseBean.courseTitle}" /></p></td>
+											</tr>
+											<tr>
+												<td>Description :</td>
+												<td><p><h:inputTextarea cols="76" rows="7"
+														value="#{courseBean.description}" /></p></td>
+
+											</tr>
+											<tr>
+												<td><img
+													src="https://upload.wikimedia.org/wikipedia/commons/3/33/White_square_with_question_mark.png"
+													alt="question" width="10%" height="10%" /> Reference Code
+													:</td>
+												<td><p><h:inputText size="100"
+														value="#{courseBean.referenceCode}" /></p></td>
+											</tr>
+											<tr>
+												<td><img
+													src="https://upload.wikimedia.org/wikipedia/commons/3/33/White_square_with_question_mark.png"
+													alt="question" width="10%" height="10%" />Active :</td>
+												<td><p><h:selectBooleanCheckbox
+														value="#{courseBean.status}" /></p></td>
+											</tr>
+										</table>
+										<h4>Course File(Optional)</h4>
+											<table>
+
+												<tr>
+													<td colspan="2"><hr /></td>
+												</tr>
+
+												<tr>
+													<td>Upload File<input type="submit" value="upload" />
+													</td>
+													<td><input type="file" accept="*" /></td>
+												</tr>
+												<tr>
+													<td colspan="2"><h:commandButton type="submit"
+															value="Save" action="#{courseBean.saveCourse}" class="save" />&nbsp;or&nbsp;<h:outputLink
+															value="composition.xhtml">Cancel</h:outputLink></td>
+												</tr>
+											</table>
+									</h:form>
+
+								</div>
+							</div>
+							<div id="courseMiddle-dashboardLeft-ContentDiv"></div>
+
+						</div>
+
+
+					</div>
+				</div>
+				<div id="courseRightActionDiv">
+					<div id="courseActionTitleDiv">NOTIFICATIONS</div>
+					<div id="courseActionMenuDiv">
+						<p>By default this course will be added as active course.
+							Later you can edit the course if required.</p>
+						<p align="center"><h:form>
+								<h:commandButton value="ADD Heading" type="submit" action="heading" class="addHeading" />  
+						</h:form> </p>	
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</ui:define>
+	<!-- <ui:define name="footer">
+	    Add your footer here or delete to use the default
+	</ui:define> -->
+
+
+</ui:composition>
+</html>

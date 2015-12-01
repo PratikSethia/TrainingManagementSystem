@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+
+
+</h:head>
+<ui:composition template="/templatesDashboard/template.xhtml">
+	<!-- <ui:define name="header">
+	    Add your header here or delete to use the default
+	</ui:define> -->
+	<ui:define name="content">
+		<div id="mainContainerDiv">
+
+			<div id="middleDiv">
+				<ui:include src="sideMenu.xhtml"></ui:include>
+				<div id="listDashboardDiv">
+
+		
+
+					<div id="listMiddle-dashboardDiv">
+						<div id="middle-dashboardLeft" class="listMiddle-dashboardSections">
+							<div id="listMiddle-dashboardLeft-TitleDiv">
+								<div style="float: left; padding-left: 1%;"><h2>List OF Courses</h2></div>
+							</div>
+							<div id="listMiddle-dashboardLeft-ContentDiv">
+								<h:form prependId="false">
+								<table>
+									<tr>
+										<td>Reference Code</td>
+										<td>Course Title</td>
+										<td colspan="3" align="center">Action</td>
+									</tr>
+									<ui:repeat var="courses" value="#{courseBean.courses}">
+										<tr>
+											<td>#{courses.referenceCode}</td>
+											<td>#{courses.courseTitle}</td>
+											<td><p style="padding-left: 10px; font-weight: bold;"><h:commandButton value="#{courses.statusValue}" action="#{courseBean.changeStatusMethod}" class="button">
+													<f:setPropertyActionListener target="#{courseBean.selectedCourseId}"
+                                                        value="#{courses.course_Id}" />
+											</h:commandButton></p></td>
+											<td><p style="padding-left: 10px; font-weight: bold;"><h:commandButton value="Details" action="#{courseBean.allDetails}" class="button">
+												<f:setPropertyActionListener target="#{courseBean.selectedCourseId}"
+                                                        value="#{courses.course_Id}" />
+											</h:commandButton></p> </td>
+											<td><p style="padding-left: 10px; font-weight: bold;">
+												<h:commandButton value="Delete" action="#{courseBean.deleteCourse}" class="delete">
+													<f:setPropertyActionListener target="#{courseBean.selectedCourseId}"
+                                                        value="#{courses.course_Id}" />
+												</h:commandButton></p>
+											</td>
+											
+										</tr>
+									</ui:repeat>
+								</table>
+								</h:form>
+							
+							</div>
+
+						</div>
+						
+
+					</div>
+				</div>
+				
+			</div>
+
+		</div>
+	</ui:define>
+	<!-- <ui:define name="footer">
+	    Add your footer here or delete to use the default
+	</ui:define> -->
+
+
+</ui:composition>
+</html>

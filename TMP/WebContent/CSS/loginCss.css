@@ -1,0 +1,53 @@
+@CHARSET "ISO-8859-1";
+
+
+body{
+	
+	
+	background-image: url("http://static1.squarespace.com/static/52278df6e4b0ca162dba847a/t/546546c6e4b09b61252e0e67/1415923404405/blurred-background-20.jpg?format=1500w");
+}
+
+#dialog{
+	
+	background: rgba(1,1,1,0.2);
+	
+}
+
+
+#loginForm{
+	
+	height: 238px;
+    width: 316px;
+    background: rgba(1,1,1,0.2);
+     box-shadow: 10px 10px 5px #888888;
+    border-radius: 25px;
+	
+}
+
+.box{
+	background:#C0C0C0;
+}
+
+.red{
+	color:red;
+	font-weight: bold;
+}
+.orange{
+	background:orange;
+	color:white;
+}
+.green{
+	background:green;
+	color:white;
+}
+
+#show{
+	margin-top:150px;
+}
+
+
+--------------------------------------------------------------------------------------------------------------------
+
+
+
+

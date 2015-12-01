@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/templatesDashboard/template.xhtml">
+
+	<ui:define name="content">
+		<div id="dashboardDiv">
+			<div class="CSSTableGenerator"
+				style="margin-left: 7%; margin-top: 5%">
+				<h:form>
+					<table>
+						<tr>
+							<td colspan="3">Course Details-<h:outputText
+									value="#{courseBean.course.courseTitle}" />
+								<div style="float: right;"></div>
+							</td>
+						</tr>
+						<ui:repeat value="#{trainerBean.course.headings}" var="heading">
+							<tr>
+								<td colspan="3"
+									style="font-weight: bolder; font-size: 15px; background-color: #8C8C8C"><h:outputText
+										style="font-weight:bold;" value="#{heading.headingText}" />
+									<div style="float: right;"></div></td>
+
+							</tr>
+							<ui:repeat value="#{heading.subHeadings}" var="subheading">
+								<tr>
+									<td style="background-color: white"><strong>*</strong></td>
+									<td style="background-color: white"><h:outputText
+											value="#{subheading.subHeadingText}" /></td>
+									<td style="background-color: white"><h:outputText
+											value="#{subheading.status}" />
+										<div style="float: right;">
+											
+											<h:commandButton value="Update"
+												action="#{trainerBean.updateSubHeadingStatus}">
+												<f:setPropertyActionListener
+													target="#{trainerBean.subHeading.subHeading_Id}"
+													value="#{subheading.subHeading_Id}" />
+											</h:commandButton>
+										</div></td>
+								</tr>
+							</ui:repeat>
+						</ui:repeat>
+						<tr>
+							<td><strong>Change the Status Here</strong></td>
+							<td colspan="2">
+						<h:selectOneMenu value="#{trainerBean.subHeading.status}">
+								<f:selectItem itemValue="Not Started" itemLabel="Not Started " />
+								<f:selectItem itemValue="Completed" itemLabel="Completed" />
+								<f:selectItem itemValue="Pending" itemLabel="Pending" />
+						</h:selectOneMenu>
+							</td>
+						</tr>
+					</table>
+				</h:form>
+			</div>
+
+
+
+		</div>
+
+	</ui:define>
+
+</ui:composition>
+</html>

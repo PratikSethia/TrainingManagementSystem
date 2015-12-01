@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14469683721400" configfile="/TMP/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="144" y="72" id="pf14469684174183" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf14478540301358" path="/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="composition.xhtml" x="433" y="79" id="pf14478525018511" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf14478525612634 pf14478540301358" inlinks="pf14478538678887" path="/composition.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="courses.xhtml" x="216" y="192" id="pf14478525018512" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14478525612634" path="/courses.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="CreateCourses.xhtml" x="612" y="216" id="pf14478525018513" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf14478538678887" path="/CreateCourses.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="heading.xhtml" x="250" y="387" id="pf14478538477856" path="/heading.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="details.xhtml" x="48" y="137" id="pf14479416025710" path="/details.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="trainerCourseDetails.xhtml" x="64" y="263" id="pf14484531381100" inlinks="pf14484531381101" path="/trainerCourseDetails.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="trainer.xhtml" x="372" y="329" id="pf14484531381112" outlinks="pf14484531381101" path="/trainer.xhtml"/>
+  <links id="pf14478525612634" target="pf14478525018512" source="pf14478525018511" outcome="courses"/>
+  <links id="pf14478538678887" target="pf14478525018511" source="pf14478525018513" outcome="composition" redirect="true"/>
+  <links id="pf14478540301358" target="pf14469684174183" source="pf14478525018511" outcome="login" redirect="true"/>
+  <links id="pf14484531381101" target="pf14484531381100" source="pf14484531381112" outcome="trainerCourseDetails"/>
+</pageflow:Pageflow>

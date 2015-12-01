@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core"
+>
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+
+<script src="jquery.js" type="text/javascript"></script>
+<script type="text/javascript" src="javaScript/registrationJs.js"></script>
+<link rel="stylesheet" href="CSS/loginCss.css"/>
+
+</h:head>
+<h:body>
+	<h:form prependId="false" style="margin-left:500px; margin-top:200px;">
+	<h1>Registration Form</h1>
+		<table>
+			<tr>
+				<td>Name:</td>
+				<td><h:inputText  id="name" value="#{userBean.name}"/></td>
+				<td><span id="spanName"/></td>
+			</tr>
+			<tr>
+				<td>Contact:</td>
+				<td><h:inputText id="contact" value="#{userBean.contact}"/></td>
+				<td><span id="spanContact"/></td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td><h:inputText id="email" value="#{userBean.email}"/></td>
+				<td><span id="spanEmail"/></td>
+			</tr>
+			
+			<tr>
+				<td>Designation:</td>
+				<td><h:selectOneMenu value="#{userBean.designation}">
+					<f:selectItem itemValue="null" itemLabel="----------Select----------"/>
+					<f:selectItem itemValue="1" itemLabel="Manager"/>
+					<f:selectItem itemValue="2" itemLabel="Trainer"/>
+					<f:selectItem itemValue="3" itemLabel="Trainee"/>
+				</h:selectOneMenu>
+				</td>
+			</tr>
+			<tr>
+				<td>UserName:</td>
+				<td><h:inputText  id="userName" value="#{userBean.userName}"/></td>
+				<td><span id="spanUser"/></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><h:inputSecret id="password" value="#{userBean.password}"/></td>
+				<td><span id="spanPassword"/></td>
+			</tr>
+			
+			<tr>
+				<td align="center" colspan="2"><h:commandButton type="submit" value="Save" action="#{userBean.userRegistration}"/></td>
+			</tr>
+		</table>
+	</h:form>
+</h:body>
+</html>

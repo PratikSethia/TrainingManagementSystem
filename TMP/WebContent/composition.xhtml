@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+
+
+</h:head>
+<ui:composition template="/templatesDashboard/template.xhtml">
+	<!-- <ui:define name="header">
+	    Add your header here or delete to use the default
+	</ui:define> -->
+	<ui:define name="content">
+		<div id="mainContainerDiv">
+
+			<div id="middleDiv">
+				<ui:include src="sideMenu.xhtml"></ui:include>
+				<div id="dashboardDiv">
+
+					<div id="top-dashboardDiv">
+						<ul>
+							<li><a href="#dashboardTab1">DASHBOARD</a></li>
+							<li><a href="#dashboardTab2">ACTIVITY</a></li>
+						</ul>
+						<div id="dashboardTab1">
+							<div class="top-dashboardMenus" >
+								<div id="dashboardMenuCircle1" class="dashboardMenuCircles">
+									<div style="padding-top: 25px; font-size: 28px;">
+										<h:outputText value="#{courseBean.activeCourse}" >
+										</h:outputText>
+									</div>
+								</div>
+								<div style="margin-left: 31px; padding-top: 5px;">
+								Active Courses
+								</div>	
+							</div>
+							<div class="top-dashboardMenus">
+								<div id="dashboardMenuCircle2" class="dashboardMenuCircles">
+									<div style="padding-top: 25px; font-size: 28px;">
+										<h:outputText value="#{courseBean.totalCourse}" >
+										</h:outputText>
+									</div>
+								</div>
+								<div style="margin-left: 31px; padding-top: 5px;">
+									Total Courses
+								</div>
+							</div>
+							<div class="top-dashboardMenus">
+								<div id="dashboardMenuCircle3" class="dashboardMenuCircles"></div>
+							</div>
+							<div class="top-dashboardMenus">
+								<div id="dashboardMenuCircle4" class="dashboardMenuCircles"></div>
+							</div>
+						</div>
+						<div id="dashboardTab2">hello</div>
+					</div>
+
+					<div id="middle-dashboardDiv">
+						<div id="middle-dashboardLeft" class="middle-dashboardSections">
+							<div id="middle-dashboardLeft-TitleDiv">
+								<div style="float: left; padding-left: 1%; padding-top: 1%;">HISTORICAL</div>
+								<div style="padding-left: 81%; padding-top: 1%;"></div>
+							</div>
+							<div id="middle-dashboardLeft-ContentDiv"></div>
+
+						</div>
+						<div id="middle-dashboardRight" class="middle-dashboardSections">
+							<div id="middle-dashboardRight-TitleDiv"
+								style="padding-left: 1%; padding-top: 1%;">ASSIGNMENT-SUBMISSION</div>
+							<div id="middle-dashboardRight-ContentDiv"></div>
+						</div>
+
+					</div>
+					<div id="bottom-dashboardDiv" style="background-color: white;">image</div>
+				</div>
+				<div id="rightActionDiv">
+					<div id="actionTitleDiv">ACTIONS</div>
+					<div id="actionMenuDiv">
+						<h:form>
+						<h:commandButton class="actionButtons"
+							value="CREATE A COURSE           >" action="CreateCourses" />
+						<br />
+						<h:commandButton class="actionButtons"
+							value="CREATE A USER               >" />
+						<br />
+						<h:commandButton class="actionButtons"
+							value="CREATE A TEAM              >" />
+						</h:form>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</ui:define>
+	<!-- <ui:define name="footer">
+	    Add your footer here or delete to use the default
+	</ui:define> -->
+
+
+</ui:composition>
+</html>

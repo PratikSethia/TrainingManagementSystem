@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+    version="2.2">
+	<navigation-rule>
+		<display-name>composition.xhtml</display-name>
+		<from-view-id>/composition.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>courses</from-outcome>
+			<to-view-id>/courses.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>CreateCourses.xhtml</display-name>
+		<from-view-id>/CreateCourses.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>composition</from-outcome>
+			<to-view-id>/composition.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>composition.xhtml</display-name>
+		<from-view-id>/composition.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/login.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>trainer.xhtml</display-name>
+		<from-view-id>/trainer.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>trainerCourseDetails</from-outcome>
+			<to-view-id>/trainerCourseDetails.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+</faces-config>

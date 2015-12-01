@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Insert title here</title>
+
+
+</h:head>
+<ui:composition template="/templatesDashboard/template.xhtml">
+	<!-- <ui:define name="header">
+	    Add your header here or delete to use the default
+	</ui:define> -->
+	<ui:define name="content">
+		<div id="mainContainerDiv">
+
+			<div id="middleDiv">
+				<ui:include src="sideMenu.xhtml"></ui:include>
+				<div id="dashboardDiv">
+					<div class="CSSTableGenerator" style="margin-left: 7%; margin-top: 5%">
+					<h:form>
+						<table>
+							<tr>
+								<td colspan="3">Course Details-<h:outputText
+										value="#{courseBean.course.courseTitle}" />
+									<div style="float: right;">
+										<h:commandLink>
+												<img src="http://vignette1.wikia.nocookie.net/future/images/2/22/Delete_icon.png/revision/latest?cb=20131207150558" alt="" height="25px" width="25px;"></img>
+										</h:commandLink>
+										
+											<h:commandLink>
+												<img src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/128/edit.png" alt=""  height="20px" width="20px;"></img>
+											</h:commandLink>
+										</div>		
+								</td>
+							</tr>
+							<ui:repeat value="#{courseBean.course.headings}" var="heading">
+								<tr>
+									<td colspan="3"
+										style="font-weight: bolder; font-size: 15px; background-color: #8C8C8C"><h:outputText
+											style="font-weight:bold;" value="#{heading.headingText}" />
+										<div style="float: right;">
+										<h:commandLink>
+												<img src="http://vignette1.wikia.nocookie.net/future/images/2/22/Delete_icon.png/revision/latest?cb=20131207150558" alt="" height="25px" width="25px;"></img>
+										</h:commandLink>
+										
+											<h:commandLink>
+												<img src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/128/edit.png" alt=""  height="20px" width="20px;"></img>
+											</h:commandLink>
+										</div>	</td>
+										
+								</tr>
+								<ui:repeat value="#{heading.subHeadings}" var="subheading">
+									<tr>
+										<td style="background-color: white"><strong>*</strong></td>
+										<td style="background-color: white"><h:outputText
+												value="#{subheading.subHeadingText}" /></td>
+										<td style="background-color: white"><h:outputText
+												value="#{subheading.status}" />
+												<div style="float: right;">
+													<h:commandLink>
+														<img
+															src="http://vignette1.wikia.nocookie.net/future/images/2/22/Delete_icon.png/revision/latest?cb=20131207150558"
+															alt="" height="25px" width="25px;"></img>
+													</h:commandLink>
+
+													<h:commandLink>
+														<img
+															src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/128/edit.png"
+															alt="" height="20px" width="20px;"></img>
+													</h:commandLink>
+												</div></td>
+									</tr>
+								</ui:repeat>
+							</ui:repeat>
+						</table>
+					</h:form> 
+					</div>
+
+
+
+				</div>
+
+			</div>
+
+		</div>
+	</ui:define>
+	<!-- <ui:define name="footer">
+	    Add your footer here or delete to use the default
+	</ui:define> -->
+
+
+</ui:composition>
+</html>

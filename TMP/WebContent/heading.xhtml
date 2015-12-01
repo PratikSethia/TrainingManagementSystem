@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+
+<ui:composition template="/templatesDashboard/template.xhtml">
+	<!-- <ui:define name="header">
+	    Add your header here or delete to use the default
+	</ui:define> -->
+	<ui:define name="content">
+		<div id="mainContainerDiv">
+
+			<div id="headingMiddleDiv">
+				<ui:include src="sideMenu.xhtml"></ui:include>
+				<div id="headingDashboardDiv">
+
+
+					<div id="headingMiddle-dashboardDiv">
+						<div id="middle-dashboardLeft"
+							class="headingMiddle-dashboardSections">
+							<div id="headingMiddle-dashboardLeft-TitleDiv">
+								<div style="float: left; padding-left: 1%;">
+									<h2>Create Detail Training Plan</h2>
+								
+								</div>
+							</div>
+							
+							<div id="headingTop-dashboardDiv">
+						<ul>
+							<li><a href="#dashboardTab1">Main Heading</a></li>
+							<li><a href="#dashboardTab2">Sub Heading</a></li>
+						</ul>
+						<div id="dashboardTab1">
+							<h:form>
+								<table style="padding: 10px; margin-left: 25%;">
+									<tr>
+										<td>Course Title :</td>
+										<td colspan="2"><p style="padding: 10px;">
+											<h:selectOneMenu value="#{headingBean.courseName}">
+												<f:selectItem itemValue="null" itemLabel="---------select--------" />
+												<f:selectItems value="#{headingBean.courses}" />
+											</h:selectOneMenu></p>
+										 </td>
+									</tr>
+									<tr>
+										<td>Heading :</td>
+										<td colspan="2"><p style="padding: 10px;"><h:inputText value="#{headingBean.heading}"/> </p></td>
+									</tr>
+									<tr style="height: 10px;">
+										<td><p style="padding: 10px;"><h:commandButton type="submit" action="#{headingBean.saveHeading}" value="Save" class="save" /></p></td>
+										<td><p style="padding: 10px;"><h:commandButton type="submit"  value="Save and Add More" action="#{headingBean.saveHeadingMore}" class="save"/></p></td>
+										<td><p style="padding:10px">&nbsp;<h:outputLink value="composition.xhtml">Cancel</h:outputLink> </p></td>
+									</tr>
+									<tr>
+										<td colspan="3" align="center" style="padding-top: 10px;">#{param.message}</td>
+									</tr>
+								</table>
+							</h:form>
+						</div>
+						<div id="dashboardTab2">
+							<h:form prependId="false">
+								<table style="padding: 10px; margin-left: 25%;">
+									<tr>
+										<td>Course Title :</td>
+										<td colspan="2"><p style="padding: 10px;">
+											<h:selectOneMenu value="#{subHeadingBean.courseTitle}" id="SubCourse">
+												<f:selectItem itemValue="null" itemLabel="---------select--------" />
+												<f:selectItems value="#{headingBean.courses}" />
+											</h:selectOneMenu></p>
+										 </td>
+									</tr>
+									<tr>
+										<td>Heading :</td>
+										<td colspan="2"><p style="padding: 10px;">
+											<h:selectOneMenu value="#{subHeadingBean.headingText}" id="SubHeading">
+												<f:selectItem itemValue="null" itemLabel="---------select--------" />
+												<f:selectItems value="#{subHeadingBean.headings}" />
+											</h:selectOneMenu></p>
+										 </td>
+									</tr>
+									<tr>
+										<td>Sub Heading :</td>
+										<td><p style="padding: 10px;"><h:inputText value="#{subHeadingBean.subHeadingText}" /></p> </td>
+									</tr>
+									<tr>
+										<td>Status</td>
+										<td><p style="padding: 10px;">
+											<h:selectOneMenu value="#{subHeadingBean.status}">
+												<f:selectItem itemValue="Not Started" itemLabel="Not Started "/>
+												<f:selectItem itemValue="Completed" itemLabel="Completed"/>
+												<f:selectItem itemValue="Pending" itemLabel="Pending"/>
+											</h:selectOneMenu></p>
+										</td>
+									</tr>
+									<tr style="height: 10px;">
+										<td><h:commandButton type="submit" action="#{subHeadingBean.saveSubHeading}" value="Save" class="save"/></td>
+										<td><h:commandButton type="submit" action="#{subHeadingBean.saveSubHeadingMore}" value="Save and Add More" class="save"/></td>
+										<td>&nbsp;<h:outputLink value="composition.xhtml">Cancel</h:outputLink> </td>
+									</tr>
+								</table>
+							</h:form>
+						
+						</div>
+					</div>
+							
+
+						</div>
+
+
+					</div>
+				</div>
+				
+			</div>
+
+		</div>
+	</ui:define>
+	<!-- <ui:define name="footer">
+	    Add your footer here or delete to use the default
+	</ui:define> -->
+
+
+</ui:composition>
+</html>
